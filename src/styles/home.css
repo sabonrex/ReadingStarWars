@@ -1,0 +1,24 @@
+::-webkit-scrollbar {
+    width: 10px; 
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #000000; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #000000; 
+    box-shadow: inset 0px 0px 8px 3px rgba(92, 171, 255,0.95);
+    border-radius: 30px;
+  }
+
+  .spinner-grow {
+    width: 100px;
+    height: 100px;
+    color: #000000 !important;
+    box-shadow: 0px 0px 50px 1px rgba(92, 171, 255, 0.99);
+    position: absolute;
+    top: 25%;
+    left: 45%;
+    
+  }

@@ -1,0 +1,22 @@
+.single {
+    width: fit-content;
+    color: #F5B80B;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.75);
+    margin: 75px;
+    border-radius: 20px;
+}
+
+button {
+    margin: 0px;
+   
+}
+.btn-lg{
+margin: 100px;
+}
+.card-text{
+    font-size: 32px;
+}
+h1{
+    font-size: 50px;
+}
