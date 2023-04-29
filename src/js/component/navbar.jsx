@@ -47,7 +47,7 @@ export const Navbar = () => {
                   {item}
                   <i
                     className="fa-solid fa-xmark"
-                    onClick={() => handleDelete(item)
+                    onClick={() => handleDelete(item) 
                     }
                   ></i>
                 </li>

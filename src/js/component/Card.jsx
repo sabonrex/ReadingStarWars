@@ -18,43 +18,40 @@ export const getData = async (info, uid) =>{
 
 }
 
-const Card = (props) => {
-  const {store, actions} = useContext(Context); 
+const CardPeople = (props) => {
+    const { store, actions } = useContext(Context)
 
-  const singlePage = 
-        props.category == "people" ? "singlePeople" 
-        : props.category == "vehicles" ? "singleVehicle" 
-        : props.category == "planets" ? "singlePlanet" 
-        : null;
+    return (
+        <div className="card-container d-flex flex-row overflow-scroll bg-whiter">
+            <div className="card-body p-3">
+                <img className="img rounded img-thumbnail img-center" src={"https://starwars-visualguide.com/assets/img/characters/" + props.uid + ".jpg"} />
+                <h5 className="card-title mt-3 mb-3 text-center">{props.name}</h5>
+                <div className="text-center">
+                    <Link to={`/people/${props.uid}`} className="btn btn-outline-primary me-5">Learn More!</Link>
+                    <button type="button" onClick={() => {
+                        actions.addReadLater({
+                            name: props.name,
+                            uid: props.uid,
+                            category: "people",
+                            link: `/people/${props.uid}`
+                        }
+                        )
+                    }} className="btn btn-outline-success ms-2"><i className="far fa-plus"></i></button>
+                    <button type="button" onClick={() => {
+                        actions.agregarFavorito({
+                            name: props.name,
+                            uid: props.uid,
+                            category: "people",
+                            link: `/people/${props.uid}`
+                        }
+                        )
+                    }} className="btn btn-outline-warning ms-2"><i className="far fa-heart"></i></button>
+                </div>
 
-  const handleClick = () => { 
-    actions.addFab(props.name);
-  };
-
-  return (
-    <div className="cartas">
-      <div className="card" style={{width: "18rem"}}>
-        <img
-          className="card-img-top"
-          src={props.image}
-          alt="Card image cap"
-        ></img>
-        <div className="card-body">
-          <h6 className="card-title">{props.name}</h6>
+            </div>
         </div>
-        <div className="card-footer">
-          <Link to={`${singlePage}/${props.category}/${props.id}`}>
-            <button type="button" className="btn btn-outline-warning">
-              Info
-            </button>
-          </Link>
-          <div className="btn btn-outline-warning" onClick={handleClick}>
-            <i className="fa-regular fa-heart"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+    );
 
-export default Card;
+}
+
+export default CardPeople;
